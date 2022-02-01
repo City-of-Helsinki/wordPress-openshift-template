@@ -1,0 +1,72 @@
+{
+    "name": "cityofhelsinki/<example-site>",
+    "type": "project",
+    "license": "MIT",
+    "description": "<example-site> composer json",
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org",
+        "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      }
+    ],
+    "require": {
+      "php": ">=7.4",
+      "johnpbloch/wordpress-core-installer": "^2.0",
+      "johnpbloch/wordpress-core": "^5.9.0",
+      "wp-cli/wp-cli-bundle": "^2.5.0",
+      "composer/installers": "^1.11",
+      "symfony/finder": "=4.4.36",
+      "psr/log": "=1.1.4",
+      "symfony/deprecation-contracts": "=v2.5.0",
+      "symfony/filesystem": "=v5.4.3",
+      "symfony/process": "=v5.4.3",
+      "symfony/service-contracts": "=v2.5.0",
+      "symfony/string": "=v5.4.3",
+      "symfony/var-dumper": "=v5.4.3",
+      "composer/xdebug-handler": "=1.4.6",
+      "inpsyde/wp-translation-downloader": "^2.0"
+    },
+    "require-dev": {
+      "squizlabs/php_codesniffer": "^3.6.0",
+      "roave/security-advisories": "dev-master",
+      "wp-cli/wp-cli-bundle": "^2.5.0",
+      "composer/installers": "^1.11",
+      "symfony/finder": "=4.4.36",
+      "psr/log": "=1.1.4",
+      "symfony/deprecation-contracts": "=v2.5.0",
+      "symfony/filesystem": "=v5.4.3",
+      "symfony/process": "=v5.4.3",
+      "symfony/service-contracts": "=v2.5.0",
+      "symfony/string": "=v5.4.3",
+      "symfony/var-dumper": "=v5.4.3",
+      "composer/xdebug-handler": "=1.4.6",
+    },
+    "config": {
+      "optimize-autoloader": true,
+      "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+      "wordpress-install-dir": "/opt/app-root/src",
+      "installer-paths": {
+        "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+        "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+      },
+      "wp-translation-downloader": {
+        "languages": [
+          "fi",
+          "sv_SE"
+        ],
+        "directory": "wp-content/languages"
+      }
+    },
+    "scripts": {
+      "post-install-cmd": [],
+      "test": [
+        "phpcs"
+      ]
+    }
+}
